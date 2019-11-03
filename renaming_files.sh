@@ -1,9 +1,1 @@
-for fin in 'find . ! -typed';
-do
-	g=`dirname "$f" `/`basename "$f" | tr '[A-Z]' '[a-z]'`
-	if [ "xxx$f" != "xxx$g" ];
-	then
-		echo "Renaming file $f"
-		mv -f $f '$g' FILE1.TXT
-	fi
-done	
+for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr 'A-Z' 'a-z'`; done
