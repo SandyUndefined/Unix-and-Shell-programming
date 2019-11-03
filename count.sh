@@ -1,6 +1,5 @@
 echo "enter filename"
 read f
-w= `echo $f j wc -1`
-c= `echo $f i wc -w`
-echo $w
-echo $c
+w=$( wc -w "$f" )
+c=$( wc -c "$f" )
+echo "$w" "$c"
